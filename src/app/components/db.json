@@ -1,0 +1,44 @@
+{
+  "posts": [
+    {
+      "firstName": "rahul",
+      "lastName": "Kumar",
+      "phone": "7903488275",
+      "email": "anirudhsingh3027@gmail.com",
+      "address1": "vdvdvd",
+      "address2": "sdgsd",
+      "city": "sdgsdgs",
+      "state": "daada",
+      "zipCode": 1512653215612,
+      "id": 3
+    },
+    {
+      "firstName": "asfasfafa",
+      "lastName": "fafasfa",
+      "phone": "5757575775",
+      "email": "rahulmechanical2702@gmail.com",
+      "address1": "vdvdvd",
+      "address2": "vd",
+      "city": "Mumbai",
+      "state": "dvdvdvhdfbdsxgs",
+      "zipCode": 676868868,
+      "id": 4
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Kumar",
+      "phone": "7903488275",
+      "email": "rahul007mec@gmail.com",
+      "address1": "gdfg",
+      "address2": "cacaca",
+      "city": "dvd",
+      "state": "gdg",
+      "zipCode": 800020,
+      "id": 5
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

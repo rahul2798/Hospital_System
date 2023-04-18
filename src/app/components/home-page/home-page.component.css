@@ -1,0 +1,101 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #039be5;
+  padding: 3px 5px;
+}
+.content {
+  flex-shrink: 1;
+  flex-grow: 1;
+  padding: 3px 5px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  flex-grow: 0;
+  background: #eee;
+  padding: 3px 15px;
+}
+p {
+  font-family: Lato;
+}
+
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+.height3 {
+  height: 50vh;
+}
+nav a:visited,
+a:link {
+  color: #607d8b;
+}
+nav a:hover {
+  color: #039be5;
+  background-color: #cfd8dc;
+}
+nav a.active {
+  color: #039be5;
+}
+
+.text-small {
+  font-size: 12px;
+}
+.text-xsmall {
+  font-size: 10px;
+}
+.text-medium {
+  font-size: 15px;
+}
+.text-normal {
+  font-size: 20px;
+}
+.text-large {
+  font-size: 25px;
+}
+
+.hovereffect:hover {
+  background-color: rgb(9, 9, 67) !important;
+  color: aliceblue !important;
+}
+.height1 {
+  height: 90vh;
+  /* background-image: url('../../../assets/icon/—Pngtree—female\ doctor\ minimalist\ medical\ background_962691.jpg'); */
+}
+.mybtn {
+  
+  padding: 10px 30px !important;
+  background-image: linear-gradient(to right,blue, violet);
+  border-radius: 5px;
+}
+.height2 {
+  height: 50vh;
+}
+.myMargin {
+  margin-top: 25vh;
+}
+
+.fontText{
+   color: #122898;
+   font-weight: bold;
+}
+
+/* img{
+  object-fit: cover;
+} */
+
+

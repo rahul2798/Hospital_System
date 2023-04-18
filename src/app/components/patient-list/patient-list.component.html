@@ -1,0 +1,170 @@
+<div class="container card" style="box-shadow: 0 0 2px 2px #e9e4e4">
+  <div class="d-flex justify-content-between" style="flex-direction: row; flex-wrap: wrap;">
+    <div>
+      <h5 style="color: rgb(33, 33, 122)" class="m-2">Patient List</h5>
+    </div>
+    <div class="mt-2">
+      <input
+        style="border-radius: 2px; border: 1px solid rgb(194, 191, 191)"
+        type="search"
+        placeholder="Search by First Name  "
+        aria-label="Search"
+        [(ngModel)]="nameSearch"
+      />
+    </div>
+  </div>
+
+  <hr />
+  <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+  <table class="table" style="border: 1px solid rgb(225, 219, 219)">
+    <thead class="table-active">
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let data of patientData | filter : nameSearch">
+        <td>{{ data.firstName }}</td>
+        <td>{{ data.lastName }}</td>
+        <td>{{ data.address1 }}</td>
+        <td>
+          <div style="display: flex;flex-direction: row;flex-wrap: wrap;">
+          <img
+            src="../../../assets/icon/icons8-view-49.png"
+            (click)="onView(data)"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            style="height: 30px; width: 30px"
+          />
+          <img
+            src="../../../assets/icon/icons8-edit-64.png"
+            (click)="onEdit(data)"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            style="height: 25px; width: 25px"
+            class="ms-2"
+          />
+          <img
+            src="../../../assets/icon/icons8-delete-67.png"
+            class="ms-2"
+            (click)="deletePatient(data)"
+            style="height: 25px; width: 25px"
+          />
+        </div>
+        </td>
+      </tr>
+    </tbody>
+    <!-- <ng-template #nodata>
+                  <tr class="text-center w-100">
+                      No Data
+                  </tr>
+              </ng-template> -->
+  </table>
+</div>
+</div>
+
+<!-- ModelView for update and view the patient list -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Patient Details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="editPatientForm">
+          <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="firstName"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Phone</label>
+            <input type="number" class="form-control" formControlName="phone" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" formControlName="email" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Address Line 1</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="address1"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Address Line 2</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="adddress2"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">City</label>
+            <input type="text" class="form-control" formControlName="city" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">State</label>
+            <input type="text" class="form-control" formControlName="state" />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Zip Code</label>
+            <input type="text" class="form-control" formControlName="Zip" />
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer" *ngIf="showButton">
+        <button type="button" id="cancel" class="btn btn-primary">
+          Cancel
+        </button>
+
+        <button
+          (click)="updatePatientDetail()"
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          UPDATE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

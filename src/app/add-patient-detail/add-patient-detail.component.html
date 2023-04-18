@@ -1,0 +1,213 @@
+<div class="container card" style="box-shadow: 0 0 2px 2px #e9e4e4">
+    <h5 style="color: rgb(33, 33, 122)" class="m-2">Patient Details</h5>
+    <hr />
+    <form [formGroup]="addPatientDetailForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex flex-row" >
+        <div>
+          <div class="form-group">
+            <label class="center-block labelColor">
+              First Name
+              <input
+                class="form-control"
+                name="firstName"
+                formControlName="firstName"
+                required
+              />
+            </label>
+          </div>
+          <span
+            class="validation-error"
+            *ngIf="
+              addPatientDetailForm.controls.firstName.touched &&
+              addPatientDetailForm.controls.firstName.invalid
+            "
+            style="color: red"
+            >First Name is required</span
+          >
+          <div>
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >Email
+                <input
+                  class="form-control"
+                  name="email"
+                  required
+                  email
+                  formControlName="email"
+                />
+              </label>
+            </div>
+            <span
+              class="validation-error"
+              *ngIf="
+                addPatientDetailForm.controls.email.touched &&
+                addPatientDetailForm.controls.email.invalid
+              "
+              style="color: red"
+              >Email is required</span
+            >
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >City
+                <input
+                  class="form-control"
+                  name="city"
+                  required
+                  pattern="[a-zA-Z]+$"
+                  formControlName="city"
+                />
+              </label>
+            </div>
+            <span
+              class="validation-error"
+              *ngIf="
+                addPatientDetailForm.controls.city.touched &&
+                addPatientDetailForm.controls.city.invalid
+              "
+              style="color: red"
+              >City is required</span
+            >
+
+            <div>
+              <button
+                [disabled]="addPatientDetailForm.invalid"
+                class="m-2"
+                style="
+                  border-radius: 20px;
+                  background-color: rgb(43, 43, 128);
+                  color: white; width: 80px;
+                "
+              >
+                ADD
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="ms-2">
+          <div class="form-group">
+            <label class="center-block labelColor">
+              Last Name
+              <input
+                class="form-control"
+                name="lastName"
+                required
+                pattern="[a-zA-Z]+$"
+                formControlName="lastName"
+              />
+            </label>
+          </div>
+          <span
+            class="validation-error"
+            *ngIf="
+              addPatientDetailForm.controls.lastName.touched &&
+              addPatientDetailForm.controls.lastName.invalid
+            "
+            style="color: red"
+            >Last Name is required</span
+          >
+
+          <div>
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >Address Line 1
+                <input
+                  class="form-control"
+                  name="adddressLine1"
+                  required
+                  formControlName="address1"
+                />
+              </label>
+            </div>
+            <span
+              class="validation-error"
+              *ngIf="
+                addPatientDetailForm.controls.address1.touched &&
+                addPatientDetailForm.controls.address1.invalid
+              "
+              style="color: red"
+              >Address is required</span
+            >
+
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >State
+                <input
+                  class="form-control"
+                  name="state"
+                  required
+                  formControlName="state"
+                />
+              </label>
+            </div>
+            <span
+              class="validation-error"
+              *ngIf="
+                addPatientDetailForm.controls.state.touched &&
+                addPatientDetailForm.controls.state.invalid
+              "
+              style="color: red"
+              >State is required</span
+            >
+          </div>
+        </div>
+        <div class="ms-2">
+          <div class="form-group">
+            <label class="center-block labelColor"
+              >Phone
+              <input
+                class="form-control"
+                name="phone"
+                required
+                minlength="10"
+                formControlName="phone"
+                maxlength="10"
+              />
+            </label>
+          </div>
+          <span
+            class="validation-error"
+            *ngIf="
+              addPatientDetailForm.controls.phone.touched &&
+              addPatientDetailForm.controls.phone.invalid
+            "
+            style="color: red"
+            >Phone is required</span
+          >
+
+          <div>
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >Address Line 2
+                <input
+                  class="form-control"
+                  name="addressLIne2"
+                  formControlName="adddress2"
+                />
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="center-block labelColor"
+                >Zip Code
+                <input
+                  class="form-control"
+                  name="zipCode"
+                  required
+                  type="number"
+                  formControlName="zipCode"
+                />
+              </label>
+            </div>
+            <span
+              class="validation-error"
+              *ngIf="
+                addPatientDetailForm.controls.zipCode.touched &&
+                addPatientDetailForm.controls.zipCode.invalid
+              "
+              style="color: red"
+              >Zipcode is required</span
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>

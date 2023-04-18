@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "firstName": "avi",
+      "lastName": "kumar",
+      "phone": "8445877900",
+      "email": "rahul007mec@gmail.com",
+      "address1": "vdvdvd",
+      "address2": "sdgsd",
+      "city": "adadad",
+      "state": "sdgs",
+      "zipCode": 46164161,
+      "id": 7
+    },
+    {
+      "firstName": "Rahul",
+      "lastName": "Kumar",
+      "phone": "7903488275",
+      "email": "rahul007mec@gmail.com",
+      "address1": "sgsg",
+      "address2": "cacaca",
+      "city": "sdgsdgs",
+      "state": "sdgs",
+      "zipCode": 5415416541,
+      "id": 9
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

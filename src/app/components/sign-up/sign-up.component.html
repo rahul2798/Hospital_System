@@ -1,0 +1,51 @@
+<div class="page-area" style="border-radius: 10px;">
+  <div>
+    <div class="header d-flex justify-content-center " style="background-color: rgb(118, 42, 190);border-radius: 10px 10px 0px 0px; flex-direction: row; flex-wrap: wrap; " >
+      <img class="mb-2 mt-2" src="../../../assets/icon/icons8-computer-64.png" alt="" width="15%" height="15%" >
+        
+		<span class="label mt-4 ms-2" style="color: white;font-size: larger;font-weight: bold;">Patient System</span>
+
+    </div>
+    <div style="margin-top: 25px;">
+
+    <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="signInUser()">
+      <h1 class="h4 mb-3 mt-2 font-weight-normal" style="color: rgb(11, 5, 125)">Sign in to your Account</h1>
+
+      <input    required class="form-control mb-3 mt-5" placeholder="Username"  formControlName="userName" [(ngModel)]="signupObj.userName">
+
+      <span class="validation-error" *ngIf="( loginForm.controls.userName.invalid && loginForm.controls.userName.touched ) " style="color: red;">User Name is required</span>
+  
+      <input  type="email"    required class="form-control mb-3 mt-5" placeholder="Email address"  formControlName="email" [(ngModel)]="signupObj.email">
+
+      <span class="validation-error" *ngIf="( loginForm.controls.email.invalid && loginForm.controls.email.touched ) " style="color: red;">Email is required</span>
+
+      <br>
+      
+      <input type="password"  class="form-control"  placeholder="Password" required formControlName="password" [(ngModel)]="signupObj.password" >
+
+      <span class="validation-error" *ngIf=" loginForm.controls.password.invalid && loginForm.controls.password.touched" style="color: red;">Password is required</span>
+
+
+
+      <div class="checkbox mt-2 " style="display: flex; flex-direction: row; flex-wrap: wrap;">
+        <label>
+          <input type="checkbox" value="remember-me" style="font-style: inherit; " > Remember me
+        </label>
+      </div>
+      <button [disabled]="loginForm.invalid" class="btn btn-success btn-block mt-3 mb-2" style="width: 100%; border-radius: 20px; background-color: rgb(118, 42, 190);"
+      >Sign Up</button>
+    </form>
+
+    <p>Already Registered? Log In.</p><span><button  (click)="register()"
+        class="btn btn-success btn-block mt-3 mb-5" style="width: 30%; border-radius: 20px; background-color: rgb(118, 42, 190);">Log In</button></span>
+
+  </div>
+</div>
+</div>
+
+
+
+
+	
+	
+
